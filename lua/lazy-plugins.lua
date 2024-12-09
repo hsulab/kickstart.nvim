@@ -39,7 +39,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/todo-comments',
 
-  require 'kickstart/plugins/mini',
+  -- require 'kickstart/plugins/mini',
 
   require 'kickstart/plugins/treesitter',
 
@@ -50,6 +50,8 @@ require('lazy').setup({
   require 'kickstart/plugins/noice',
 
   require 'kickstart/plugins/lazygit',
+
+  require 'kickstart/plugins/heirline',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -63,7 +65,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
