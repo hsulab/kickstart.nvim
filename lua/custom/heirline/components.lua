@@ -304,7 +304,7 @@ M.FileName = {
   provider = function(self)
     -- self.filename will be defined later, just keep looking at the example!
     local filename = self.filename
-    filename = filename == '' and '[No Name]' or vim.fn.fnamemodify(filename, ':t')
+    filename = filename == '' and '[Untitiled]' or vim.fn.fnamemodify(filename, ':t')
     return filename
   end,
   hl = function(self)
@@ -319,7 +319,7 @@ M.FilePath = {
     -- options, see :h filename-modifers
     local filename = vim.fn.fnamemodify(self.filename, ':.')
     if filename == '' then
-      return '[No Name]'
+      return '[Untitiled]'
     end
     -- now, if the filename would occupy more than 1/4th of the available
     -- space, we trim the file path to its initials
