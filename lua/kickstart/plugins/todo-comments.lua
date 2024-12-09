@@ -9,7 +9,7 @@ return {
       error = { 'DiagnosticError', 'ErrorMsg', '#DC2626' },
       warning = { 'DiagnosticWarn', 'WarningMsg', '#FBBF24' },
       info = { '#10B981' },
-      hint = { 'DiagnosticHint', '#10B981' },
+      hint = { '#10B981' },
       default = { 'Identifier', '#7C3AED' },
       test = { 'Identifier', '#FF00FF' },
     },
