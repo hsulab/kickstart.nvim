@@ -47,8 +47,6 @@ require('lazy').setup({
 
   require 'kickstart/plugins/comment',
 
-  require 'kickstart/plugins/noice',
-
   require 'kickstart/plugins/lazygit',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
