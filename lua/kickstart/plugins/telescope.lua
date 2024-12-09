@@ -99,7 +99,9 @@ return {
         require('telescope').extensions.notify.notify()
       end, { desc = '[F]ind [N]otifications' })
 
-      vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odos' })
+      vim.keymap.set('n', '<leader>ft', function()
+        vim.cmd 'TodoTelescope'
+      end, { desc = '[F]ind [T]odos' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>fc', function()
