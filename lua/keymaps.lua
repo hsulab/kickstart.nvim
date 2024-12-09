@@ -25,6 +25,7 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- Keybinds to move between tabs
 vim.keymap.set('n', '<S-h>', '<cmd>bprev<cr>', { desc = 'Move focus to the previous buffer' })
 vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Move focus to the next buffer' })
+vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = 'Close the current buffer' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
