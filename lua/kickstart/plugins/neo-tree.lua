@@ -13,13 +13,4 @@ return {
   keys = {
     { '<leader>e', ':Neotree reveal<CR>', desc = 'Toggle Explorer', silent = true },
   },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ['<leader>e'] = 'close_window',
-        },
-      },
-    },
-  },
 }
