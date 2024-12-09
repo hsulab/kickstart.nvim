@@ -1,7 +1,7 @@
 return {
   'rebelot/heirline.nvim',
   dependencies = { 'zeioth/heirline-components.nvim' },
-  -- event = 'User BaseDefered',
+  event = 'VeryLazy',
   opts = function()
     local lib = require 'heirline-components.all'
     return {
@@ -37,18 +37,17 @@ return {
             lib.component.fill(),
             lib.component.compiler_build_type(),
             lib.component.compiler_redo(),
-            lib.component.aerial(),
+            -- lib.component.aerial(),
           },
         },
         -- Regular winbar
         {
-          lib.component.neotree(),
-          lib.component.compiler_play(),
-          lib.component.fill(),
           lib.component.breadcrumbs(),
           lib.component.fill(),
+          lib.component.compiler_play(),
+          lib.component.fill(),
           lib.component.compiler_redo(),
-          lib.component.aerial(),
+          -- lib.component.aerial(),
         },
       },
       statuscolumn = { -- UI left column
@@ -63,8 +62,14 @@ return {
         hl = { fg = 'fg', bg = 'bg' },
         lib.component.mode(),
         lib.component.git_branch(),
-        lib.component.file_info(),
         lib.component.git_diff(),
+        lib.component.file_info {
+          filename = { modify = ':.' },
+          filetype = false,
+          file_read_only = false,
+          padding = { right = 1 },
+          surround = { separator = 'left', condition = false },
+        },
         lib.component.diagnostics(),
         lib.component.fill(),
         lib.component.cmd_info(),
@@ -84,6 +89,7 @@ return {
     -- Setup
     heirline_components.init.subscribe_to_events()
     heirline.load_colors(heirline_components.hl.get_colors())
+    vim.opt.showtabline = 2 -- See heirline-components issue#11
     heirline.setup(opts)
   end,
 }
