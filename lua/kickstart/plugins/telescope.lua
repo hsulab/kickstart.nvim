@@ -80,6 +80,7 @@ return {
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension, 'aerial')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -93,15 +94,6 @@ return {
       -- vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
       -- vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
       -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
-      -- With extensions
-      vim.keymap.set('n', '<leader>fn', function()
-        require('telescope').extensions.notify.notify()
-      end, { desc = '[F]ind [N]otifications' })
-
-      vim.keymap.set('n', '<leader>ft', function()
-        vim.cmd 'TodoTelescope'
-      end, { desc = '[F]ind [T]odos' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>fc', function()
@@ -125,6 +117,17 @@ return {
       -- vim.keymap.set('n', '<leader>fn', function()
       --   builtin.find_files { cwd = vim.fn.stdpath 'config' }
       -- end, { desc = '[F]ind [N]eovim files' })
+
+      -- With extensions
+      vim.keymap.set('n', '<leader>fn', function()
+        require('telescope').extensions.notify.notify()
+      end, { desc = '[F]ind [N]otifications' })
+
+      vim.keymap.set('n', '<leader>ft', function()
+        vim.cmd 'TodoTelescope'
+      end, { desc = '[F]ind [T]odos' })
+
+      vim.keymap.set('n', '<leader>ls', '<cmd>Telescope aerial<cr>', { desc = 'Find Symbols' })
     end,
   },
 }
