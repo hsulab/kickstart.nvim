@@ -67,6 +67,7 @@ return {
             prompt_position = 'top',
             width = 0.8,
           },
+          sorting_strategy = 'ascending',
         },
         -- pickers = {}
         extensions = {
