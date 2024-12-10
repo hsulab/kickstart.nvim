@@ -19,7 +19,7 @@ M.Ruler = {
   -- %L = number of lines in the buffer
   -- %c = column number
   -- %P = percentage through file of displayed window
-  provider = '%(%l/%L%)(%P)',
+  provider = '%(%l:%c/%L%)(%P)',
 }
 M.ScrollBar = {
   static = {
