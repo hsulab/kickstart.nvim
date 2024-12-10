@@ -12,11 +12,11 @@ return {
     vim.keymap.set('n', '<leader>sd', resession.delete, { desc = '[S]ession delete' })
 
     -- Automatically save sessions on by working directory on exit
-    vim.api.nvim_create_autocmd('VimLeavePre', {
-      callback = function()
-        resession.save(vim.fn.getcwd(), { notify = true })
-      end,
-    })
+    -- vim.api.nvim_create_autocmd('VimLeavePre', {
+    --   callback = function()
+    --     resession.save(vim.fn.getcwd(), { notify = true })
+    --   end,
+    -- })
 
     -- Automatically load sessions on startup by working directory
     -- vim.api.nvim_create_autocmd('VimEnter', {
