@@ -82,12 +82,12 @@ return {
         { section = 'startup' },
       },
     },
-    indent = { enabled = true },
+    indent = { enabled = true }, -- replace indent_line
     input = { enabled = true },
-    notifier = { enabled = true },
+    -- notifier = { enabled = true },  -- replace nvim-notify?
     quickfile = { enabled = true },
     scroll = { enabled = true },
-    statuscolumn = { enabled = true },
+    -- statuscolumn = { enabled = true },  -- replace heirline?
     words = { enabled = true },
   },
 }
