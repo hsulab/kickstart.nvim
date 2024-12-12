@@ -86,8 +86,27 @@ return {
     input = { enabled = true },
     -- notifier = { enabled = true },  -- replace nvim-notify?
     quickfile = { enabled = true },
-    scroll = { enabled = true },
+    scroll = {
+      enabled = true,
+      -- animate = { duration = { step = 15, total = 250 }, easing = 'linear' }
+    },
     -- statuscolumn = { enabled = true },  -- replace heirline?
     words = { enabled = true },
+  },
+  keys = {
+    {
+      '<leader>z',
+      function()
+        Snacks.zen()
+      end,
+      desc = 'Toggle Zen Mode',
+    },
+    {
+      '<leader>Z',
+      function()
+        Snacks.zen.zoom()
+      end,
+      desc = 'Toggle Zoom',
+    },
   },
 }
