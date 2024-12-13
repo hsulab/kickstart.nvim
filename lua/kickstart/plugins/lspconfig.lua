@@ -180,9 +180,11 @@ return {
         -- clangd = {},
         -- gopls = {},
         pyright = {
-          python = {
-            analysis = {
-              autoImportCompletions = false, -- Disable auto-import suggestions
+          settings = {
+            python = {
+              analysis = {
+                autoImportCompletions = false, -- Disable auto-import suggestions
+              },
             },
           },
         },
