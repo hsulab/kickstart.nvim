@@ -29,11 +29,11 @@ return {
         ---LHS of extra mappings
         extra = {
           ---Add comment on the line above
-          above = 'gcO',
+          above = '<leader>/O',
           ---Add comment on the line below
-          below = 'gco',
+          below = '<leader>/o',
           ---Add comment at the end of line
-          eol = 'gcA',
+          eol = '<leader>/A',
         },
         ---Enable keybindings
         ---NOTE: If given `false` then the plugin won't create any mappings

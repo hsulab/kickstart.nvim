@@ -57,6 +57,7 @@ return {
 
       -- Document existing key chains
       spec = {
+        { '<C-w>', group = 'Window Keys', hidden = true },
         -- { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         -- { '<leader>d', group = '[D]ocument' },
         { '<leader>f', group = '[F]ind' },
