@@ -80,6 +80,7 @@ return {
       { '<leader>z', group = 'Zen Mode', hidden = true },
       { '<leader>Z', group = 'Zen Mode', hidden = true },
       { '<leader>/', group = 'Comment', hidden = true },
+      { '<localleader>l', group = 'Latex', icon = ' ' },
     }
   end,
 }
