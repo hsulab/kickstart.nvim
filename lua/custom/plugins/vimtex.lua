@@ -1,7 +1,5 @@
 return {
   'lervag/vimtex',
-  -- lazy = false,
-  event = { 'FileType', 'VeryLazy' },
   config = function()
     vim.g.vimtex_view_method = 'skim'
     vim.g.vimtex_view_skim_sync = 1
