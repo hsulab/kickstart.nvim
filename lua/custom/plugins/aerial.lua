@@ -6,7 +6,7 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   opts = {
-    vim.keymap.set('n', '<leader>lS', '<cmd>AerialToggle!<CR>'),
+    vim.keymap.set('n', '<leader>lS', '<cmd>AerialToggle!<CR>', { desc = 'Symbol Outline' }),
   },
   config = function()
     require('aerial').setup { filter_kind = false }
