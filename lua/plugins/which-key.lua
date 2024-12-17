@@ -74,6 +74,7 @@ return {
       { '<leader>g', group = 'Git', mode = { 'n', 'v' } },
       { '<leader>l', group = 'Lsp', mode = 'n', icon = '󰿘 ' },
       { '<leader>o', group = 'Overseer', mode = 'n', icon = '󰑮 ' },
+      { '<leader>p', group = 'Package', mode = 'n', icon = ' ' },
       { '<leader>s', group = 'Session', mode = 'n' },
       { '<leader>t', group = 'Toggle', hidden = true },
       { '<leader>z', group = 'Zen Mode', hidden = true },
