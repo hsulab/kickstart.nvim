@@ -22,8 +22,6 @@ require('lazy').setup({
 
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
-  --
-  -- require 'kickstart/plugins/alpha-nvim',
 
   require 'kickstart/plugins/gitsigns',
 
@@ -41,11 +39,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/todo-comments',
 
-  -- require 'kickstart/plugins/mini',
-
   require 'kickstart/plugins/treesitter',
-
-  -- My custom plugins
 
   require 'kickstart/plugins/comment',
 
@@ -55,14 +49,6 @@ require('lazy').setup({
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
 
