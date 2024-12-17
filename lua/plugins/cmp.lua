@@ -51,18 +51,8 @@ return {
 
         -- Menu Window
         window = {
-          -- completion = cmp.config.window.bordered {
-          --   winhighlight = 'Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None',
-          -- },
-          -- documentation = {
-          --   winhighlight = 'Normal:CmpDocNormal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None',
-          -- },
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-          -- completion = cmp.config.window.bordered(),
-          -- documentation = cmp.config.window.bordered {
-          --   winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None',
-          -- },
+          completion = cmp.config.window.bordered { scrollbar = false },
+          documentation = cmp.config.window.bordered { scrollbar = false },
         },
 
         -- For an understanding of why these mappings were
