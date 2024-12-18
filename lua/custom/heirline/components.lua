@@ -249,46 +249,48 @@ M.Git = {
     self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
   end,
 
-  hl = { fg = palette.flamingo },
+  hl = { fg = palette.flamingo, bg = palette.base },
 
   { -- git branch name
     provider = function(self)
       return ' ' .. self.status_dict.head
     end,
-    hl = { bold = true },
+    hl = { bold = true, bg = palette.base },
   },
   {
     condition = function(self)
       return self.has_changes
     end,
     provider = '(',
+    hl = { bg = palette.base },
   },
   {
     provider = function(self)
       local count = self.status_dict.added or 0
       return count > 0 and ('+' .. count)
     end,
-    hl = { fg = colors.git_add },
+    hl = { fg = colors.git_add, bg = palette.base },
   },
   {
     provider = function(self)
       local count = self.status_dict.removed or 0
       return count > 0 and ('-' .. count)
     end,
-    hl = { fg = colors.git_del },
+    hl = { fg = colors.git_del, bg = palette.base },
   },
   {
     provider = function(self)
       local count = self.status_dict.changed or 0
       return count > 0 and ('~' .. count)
     end,
-    hl = { fg = colors.git_change },
+    hl = { fg = colors.git_change, bg = palette.base },
   },
   {
     condition = function(self)
       return self.has_changes
     end,
     provider = ')',
+    hl = { bg = palette.base },
   },
 }
 
