@@ -74,8 +74,8 @@ return {
           --  This will expand snippets if the LSP sent a snippet.
           ['<CR>'] = cmp.mapping.confirm { select = true },
           ['<Right>'] = cmp.mapping.confirm { select = true },
-          ['<Tab><Tab>'] = cmp.mapping.confirm { select = true },
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          -- ['<Tab><Tab>'] = cmp.mapping.confirm { select = true },
+          -- ['<C-y>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
@@ -118,6 +118,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'codeium' },
         },
       }
     end,
