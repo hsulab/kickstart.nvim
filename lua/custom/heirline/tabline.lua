@@ -66,11 +66,14 @@ vim.api.nvim_create_autocmd({ 'UIEnter', 'BufAdd', 'BufDelete' }, {
       end
 
       -- check how many buffers we have and set showtabline accordingly
-      if #buflist_cache > 1 then
-        vim.o.showtabline = 2 -- always
-      elseif vim.o.showtabline ~= 1 then -- don't reset the option if it's already at default value
-        vim.o.showtabline = 1 -- only when #tabpages > 1
+      if #buflist_cache >= 1 then
+        vim.o.showtabline = 2
       end
+      -- if #buflist_cache > 1 then
+      --   vim.o.showtabline = 2 -- always
+      -- elseif vim.o.showtabline ~= 1 then -- don't reset the option if it's already at default value
+      --   vim.o.showtabline = 1 -- only when #tabpages > 1
+      -- end
     end)
   end,
 })
@@ -85,8 +88,6 @@ local TabLineOffset = {
       self.title = ''
       self.hl = { bg = palette.base }
       return true
-      -- elseif vim.bo[bufnr].filetype == "TagBar" then
-      --     ...
     end
   end,
 
