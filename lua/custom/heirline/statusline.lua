@@ -8,6 +8,8 @@ return { -- statusline
   components.MacroRecording,
   components.Fill,
   components.RightPadding(components.ShowCmd),
+  components.Fill,
+  components.RightPadding(components.ConformActive),
   components.RightPadding(components.LSPActive),
   components.RightPadding(components.FileType, 0),
   components.RightPadding(components.Ruler),

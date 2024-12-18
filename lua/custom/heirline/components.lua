@@ -227,6 +227,20 @@ M.LSPActive = {
   hl = { fg = palette.maroon, bold = true },
 }
 
+M.ConformActive = {
+  condition = function(self)
+    local ok, conform = pcall(require, 'conform')
+    self.conform = conform
+    return ok
+  end,
+  update = { 'BufEnter' },
+  provider = function(self)
+    local formatters = self.conform.list_formatters_for_buffer(self.bufnr)
+    return formatters and table.concat(formatters, ',') or 'None'
+  end,
+  hl = { fg = palette.green, bold = true },
+}
+
 M.Git = {
   condition = conditions.is_git_repo,
 
