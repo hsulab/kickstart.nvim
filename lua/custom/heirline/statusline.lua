@@ -1,6 +1,7 @@
 local components = require 'custom.heirline.components'
 
 return { -- statusline
+  components.RightPadding(components.ViMode, 2),
   components.RightPadding(components.Git, 4),
   components.RightPadding(components.FilePathBlock, 2),
   components.RightPadding(components.Diagnostics),
