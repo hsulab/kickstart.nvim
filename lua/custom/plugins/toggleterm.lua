@@ -12,6 +12,7 @@ return {
     vim.api.nvim_set_keymap('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = '[T]oggleTerm [F]loat' })
     vim.api.nvim_set_keymap('n', '<leader>th', '<cmd>ToggleTerm size=20 direction=horizontal<cr>', { desc = '[T]oggleTerm [H]orizontal' })
     vim.api.nvim_set_keymap('n', '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>', { desc = '[T]oggleTerm [V]ertical' })
+    vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>ToggleTerm direction=tab<cr>', { desc = '[T]oggleTerm [T]ab' })
 
     function _G.set_terminal_keymaps()
       local opts = { buffer = 0 }

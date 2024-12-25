@@ -76,7 +76,7 @@ return {
       { '<leader>o', group = 'Overseer', mode = 'n', icon = '󰑮 ' },
       { '<leader>p', group = 'Package', mode = 'n', icon = ' ' },
       { '<leader>s', group = 'Session', mode = 'n' },
-      { '<leader>t', group = 'Toggle', hidden = true },
+      { '<leader>t', group = 'Terminal', mode = 'n' },
       { '<leader>z', group = 'Zen Mode', hidden = true },
       { '<leader>Z', group = 'Zen Mode', hidden = true },
       { '<leader>/', group = 'Comment', hidden = true },
