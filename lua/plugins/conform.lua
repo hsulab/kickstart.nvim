@@ -45,6 +45,11 @@ return {
           args = {
             '--indent-type',
             'Spaces',
+            '--indent-width',
+            '2',
+            '--stdin-filepath',
+            '$FILENAME',
+            '-',
           },
         },
       },
