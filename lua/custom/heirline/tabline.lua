@@ -1,16 +1,16 @@
-local utils = require 'heirline.utils'
-local palette = require('catppuccin.palettes').get_palette 'mocha'
-local components = require 'custom.heirline.components'
+local utils = require("heirline.utils")
+local palette = require("catppuccin.palettes").get_palette("mocha")
+local components = require("custom.heirline.components")
 
 -- a nice "x" button to close the buffer
 local TablineCloseButton = {
   condition = function(self)
-    return not vim.api.nvim_get_option_value('modified', { buf = self.bufnr })
+    return not vim.api.nvim_get_option_value("modified", { buf = self.bufnr })
   end,
-  { provider = ' ', hl = { fg = 'gray' } },
+  { provider = " ", hl = { fg = "gray" } },
   {
-    provider = '✗ ',
-    hl = { fg = 'gray' },
+    provider = "✗ ",
+    hl = { fg = "gray" },
     on_click = {
       callback = function(_, minwid)
         vim.schedule(function()
@@ -21,14 +21,14 @@ local TablineCloseButton = {
       minwid = function(self)
         return self.bufnr
       end,
-      name = 'heirline_tabline_close_buffer_callback',
+      name = "heirline_tabline_close_buffer_callback",
     },
   },
 }
 
 -- The final touch!
 local TablineBufferLeftIndicator = {
-  provider = '┃ ',
+  provider = "┃ ",
   hl = function(self)
     return { fg = self.is_active and palette.yellow or palette.base, bg = palette.base, bold = true }
   end,
@@ -38,15 +38,15 @@ local TablineBufferBlock = { TablineBufferLeftIndicator, components.TablineFileN
 -- and here we go
 local BufferLine = utils.make_buflist(
   TablineBufferBlock,
-  { provider = ' ', hl = { fg = 'gray' } }, -- left truncation, optional (defaults to "<")
-  { provider = ' ', hl = { fg = 'gray' } } -- right trunctation, also optional (defaults to ...... yep, ">")
+  { provider = " ", hl = { fg = "gray" } }, -- left truncation, optional (defaults to "<")
+  { provider = " ", hl = { fg = "gray" } } -- right trunctation, also optional (defaults to ...... yep, ">")
   -- by the way, open a lot of buffers and try clicking them ;)
 )
 
 -- this is the default function used to retrieve buffers
 local get_bufs = function()
   return vim.tbl_filter(function(bufnr)
-    return vim.api.nvim_get_option_value('buflisted', { buf = bufnr })
+    return vim.api.nvim_get_option_value("buflisted", { buf = bufnr })
   end, vim.api.nvim_list_bufs())
 end
 
@@ -54,7 +54,7 @@ end
 local buflist_cache = {}
 
 -- setup an autocmd that updates the buflist_cache every time that buffers are added/removed
-vim.api.nvim_create_autocmd({ 'UIEnter', 'BufAdd', 'BufDelete' }, {
+vim.api.nvim_create_autocmd({ "UIEnter", "BufAdd", "BufDelete" }, {
   callback = function()
     vim.schedule(function()
       local buffers = get_bufs()
@@ -84,8 +84,8 @@ local TabLineOffset = {
     local bufnr = vim.api.nvim_win_get_buf(win)
     self.winid = win
 
-    if vim.bo[bufnr].filetype == 'neo-tree' then
-      self.title = ''
+    if vim.bo[bufnr].filetype == "neo-tree" then
+      self.title = ""
       self.hl = { bg = palette.base }
       return true
     end
@@ -95,34 +95,35 @@ local TabLineOffset = {
     local title = self.title
     local width = vim.api.nvim_win_get_width(self.winid)
     local pad = math.ceil((width - #title) / 2)
-    return string.rep(' ', pad) .. title .. string.rep(' ', pad)
+    return string.rep(" ", pad) .. title .. string.rep(" ", pad)
   end,
 
   hl = function(self)
     if vim.api.nvim_get_current_win() == self.winid then
-      return 'TablineSel'
+      return "TablineSel"
     else
-      return 'Tabline'
+      return "Tabline"
     end
   end,
 }
 
 local Tabpage = {
   provider = function(self)
-    return '%' .. self.tabnr .. 'T ' .. self.tabpage .. ' %T'
+    -- return "%" .. self.tabnr .. "T " .. self.tabpage .. " %T"
+    return " " .. self.tabnr .. " "
   end,
   hl = function(self)
     if not self.is_active then
-      return 'TabLine'
+      return "TabLine"
     else
-      return 'TabLineSel'
+      return "TabLineSel"
     end
   end,
 }
 
 local TabpageClose = {
-  provider = '%999X ✗ %X',
-  hl = 'TabLine',
+  provider = "%999X ✗ %X",
+  hl = "TabLine",
 }
 
 local TabPages = {
@@ -130,7 +131,7 @@ local TabPages = {
   condition = function()
     return #vim.api.nvim_list_tabpages() >= 2
   end,
-  { provider = '%=' },
+  { provider = "%=" },
   utils.make_tablist(Tabpage),
   TabpageClose,
 }
